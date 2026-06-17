@@ -1,5 +1,15 @@
 # CLAUDE.md (Global)
 
+## Agentic Execution
+
+**MAXIMIZE PARALLELISM** - This is the top priority.
+
+**Parallel by Default:**
+- ALWAYS launch multiple Task tool calls in single message when independent
+- NEVER wait for one agent to finish before starting another independent one
+- Default to parallelism for: file searches, research, analysis, reviews
+- Max 10 concurrent agents; Claude auto-queues excess in batches
+
 Direct. Evidence-first. Skip preamble.
 
 ## Writing Style
