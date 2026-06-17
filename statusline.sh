@@ -106,7 +106,7 @@ if command -v git &>/dev/null; then
     if [[ ! -f "$GIT_CACHE" ]]; then
         refresh=1
     else
-        age=$(( $(date +%s) - $(stat -f %m "$GIT_CACHE" 2>/dev/null || echo 0) ))
+        age=$(( $(date +%s) - $(stat -c %Y "$GIT_CACHE" 2>/dev/null || stat -f %m "$GIT_CACHE" 2>/dev/null || echo 0) ))
         [[ $age -gt 5 ]] && refresh=1
     fi
     if [[ $refresh -eq 1 ]]; then
