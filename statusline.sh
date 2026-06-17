@@ -164,7 +164,6 @@ for ((i=0; i<empty; i++)); do bar="${bar}░"; done
 hour=$(date -u +%H); min=$(date -u +%M)
 block_hour=$((hour % 5))
 remaining_min=$(( (4 - block_hour) * 60 + (60 - min) ))
-[[ $remaining_min -ge 300 ]] && remaining_min=$((remaining_min - 300))
 block_timer="$(( remaining_min / 60 ))h$(( remaining_min % 60 ))m"
 
 # =============================================================================
