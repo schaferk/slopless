@@ -98,7 +98,7 @@ fmt_duration() {
 # GIT INFO (cached 5s)
 # =============================================================================
 # Cache per-directory so switching projects doesn't show stale git info
-GIT_CACHE="/tmp/statusline-git-$(echo "$CWD" | md5 -q 2>/dev/null || echo "$CWD" | md5sum 2>/dev/null | cut -d' ' -f1)"
+GIT_CACHE="/tmp/statusline-git-$(echo "$CWD" | { md5 -q 2>/dev/null || md5sum 2>/dev/null | cut -d' ' -f1; })"
 
 git_seg=""
 if command -v git &>/dev/null; then
